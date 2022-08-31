@@ -3,6 +3,7 @@ body {
     margin: 0 auto;
     max-width: 1440px;
     text-rendering: optimizeLegibility;
+    overflow-y: hidden;
 }
 
 .principal {
