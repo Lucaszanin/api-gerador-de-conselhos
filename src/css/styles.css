@@ -3,7 +3,6 @@ body {
     margin: 0 auto;
     max-width: 1440px;
     text-rendering: optimizeLegibility;
-    overflow-y: hidden;
 }
 
 .principal {
@@ -12,6 +11,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
+    overflow-y: hidden;
 }
 
 .principal section {
