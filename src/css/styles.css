@@ -20,7 +20,6 @@ body {
 }
 
 .principal .card {
-    margin-top: auto;
     display: flex;
     flex: 1 1 300px;
     max-width: 50rem;
@@ -29,7 +28,7 @@ body {
     background: var(--dark-grayish-blue);
     border-radius: 10px;
     position: relative;
-    margin: 30px;
+    margin: 0 30px;
 }
 
 .card .card-content {

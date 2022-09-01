@@ -1,24 +1,24 @@
-const url = 'https://api.adviceslip.com/advice'
+import { getAdevices } from "../scripts/services/services.js"
 
 const btn = document.querySelector('.button')
-const idDevice = document.querySelector('#id-adevice')
-const advice = document.querySelector('#description')
+let mensagem = ''
+let idMensagem = ''
 
-async function getAdevices(){
-    const response = await fetch(`${url}`)
-    const responseJson = await response.json()
-    return await responseJson
-}   
+async function readMsg() {
+    const resposta = await getAdevices()
+    mensagem = resposta.slip.advice
+    idMensagem = resposta.slip.id
+}
 
-async function readMsg(){
-    let resposta = await getAdevices()
-    const mensagem  = resposta.slip.advice
-    const  idMensagem = resposta.slip.id
+function renderMsg() {
+    readMsg()
+    const idDevice = document.querySelector('#id-adevice')
+    const advice = document.querySelector('#description')
     advice.innerHTML = mensagem
     idDevice.innerHTML = idMensagem
 }
 
-
-btn.addEventListener('click',readMsg)
+readMsg()
+btn.addEventListener('click', renderMsg)
 
 
